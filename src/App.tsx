@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from "react"
+import { Header, Grid, GridRow } from "semantic-ui-react"
+import "./App.css"
+import plays from "./plays"
+
+const HeaderBanner = lazy(() => import("./components/Header"))
+const Intro = lazy(() => import("./components/Intro"))
+const Event = lazy(() => import("./components/Event"))
+const Tickets = lazy(() => import("./components/Tickets"))
+const Footer = lazy(() => import("./components/Footer"))
+
+const events = plays.map(play => {
+  return <Event {...play} />
+})
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Suspense fallback={<div>Cargando...</div>}>
+      <Grid columns="1" className="App">
+        <GridRow>
+          <HeaderBanner />
+          <Intro />
+          <Header className="plays top-bot-padding">LAS OBRAS</Header>
+          {events}
+          <Tickets />
+          <Footer />
+        </GridRow>
+      </Grid>
+    </Suspense>
+  )
 }
 
-export default App;
+export default App
