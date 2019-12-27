@@ -30,18 +30,18 @@ const Event = (props: {
       ))}
       <Grid columns={2} stackable centered>
         <GridRow style={{ margin: "5vmin 0" }} centered>
-          <GridColumn>
-            <Header style={{ textAlign: "center", color: "#f26722", fontSize: "8vmin" }}>
-              Trailer:
-            </Header>
-            {props.videoId ? (
+          {props.videoId ? (
+            <GridColumn>
+              <Header style={{ textAlign: "center", color: "#f26722", fontSize: "8vmin" }}>
+                Trailer:
+              </Header>
               <Embed
                 id={props.videoId}
                 source={props.videoProvider === "youtube" ? "youtube" : "vimeo"}
                 placeholder={`${process.env.REACT_APP_PUBLIC_URL}/assets/images/${props.videoPlaceholder}`}
               />
-            ) : null}
-          </GridColumn>
+            </GridColumn>
+          ) : null}
           <GridColumn>
             <Suspense fallback={<div>Cargando Galería...</div>}>
               <PhotoGallery photos={props.photos} />

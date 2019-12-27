@@ -1,5 +1,6 @@
 import React from "react"
 import { Container, Header, Image, Grid, GridColumn, GridRow } from "semantic-ui-react"
+import ReactGA from "react-ga"
 
 const Tickets = () => (
   <GridColumn style={{ marginBottom: "10vmin" }}>
@@ -30,7 +31,7 @@ const Tickets = () => (
         <p className="small">
           Entrega de invitaciones:
           <br />
-          3 de enero de 12 a 19:30 en el frontis de la Municipalidad
+          6 de enero de 12 a 17:30 en el frontis de la Municipalidad
           <br />
           Plaza de Los Héroes 445
         </p>
@@ -54,7 +55,12 @@ const Tickets = () => (
         <Header as="h1" style={{ color: "#f26722", textAlign: "center" }}>
           Tickets Electrónicos:
         </Header>
-        <div onClick={() => window.open("https://webviews.smartrancagua.com/auth/login", "_blank")}>
+        <div
+          onClick={() => {
+            ReactGA.event({ category: "tickets", action: "getTickets" })
+            window.open("https://webviews.smartrancagua.com/auth/login", "_blank")
+          }}
+        >
           <Image
             src={`${process.env.REACT_APP_PUBLIC_URL}/assets/images/tickets.png`}
             alt="Tickets"

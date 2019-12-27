@@ -1,10 +1,10 @@
-@font-face {
-  font-family: "Knockout";
-  src: local("Knockout"), url(./fonts/Knockout-HTF49-Liteweight.otf) format("truetype");
-}
+/* @font-face {
+  font-family: "Lato";
+  src: local("Lato"), url(./fonts/Lato-HTF49-Liteweight.otf) format("truetype");
+} */
 
 p {
-  font-family: Knockout;
+  font-family: Lato;
   font-weight: 500 !important;
   color: #454545;
 }
@@ -16,7 +16,7 @@ p {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #282c34;
-  font-family: Knockout;
+  font-family: Lato;
 }
 
 .App-header {
@@ -34,8 +34,8 @@ p {
 }
 
 .heading {
-  font-family: Knockout !important;
-  font-weight: 500 !important;
+  font-family: Lato !important;
+  font-weight: 600 !important;
 }
 
 .top-bot-padding {
@@ -44,7 +44,7 @@ p {
 }
 
 .plays {
-  font-family: Knockout !important;
+  font-family: Lato !important;
   font-size: 10vmin !important;
   color: #f26722 !important;
   margin: 8vmin 0 !important;
