@@ -26,7 +26,7 @@ const App: React.FC = () => {
           <Intro />
           <Header className="plays top-bot-padding">LAS OBRAS</Header>
           {events}
-          <Tickets />
+          {/* <Tickets /> */}
           <Footer />
         </GridRow>
       </Grid>

@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Header, Image, Grid, GridColumn, GridRow } from "semantic-ui-react"
+import { Header, Image, Grid, GridColumn } from "semantic-ui-react"
 import ReactGA from "react-ga"
 
 const Tickets = () => (
